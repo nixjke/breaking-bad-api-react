@@ -1,40 +1,48 @@
-# Getting Started with Create React App
+# React Redux test project: **Breaking Bad**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Необходимо разработать приложение используя данное API - [https://breakingbadapi.com/documentation](https://breakingbadapi.com/documentation)
 
-## Available Scripts
+---
+
+## Есть 3 уровня задач
+
+$2^n$ | $n^2$ | $n$
+----- | ----- | ----
+Base | Normal | Max
+
+## Base
+
+1. Отобразить все эпизоды, разбив по сезонам вкладками
+2. Для каждого эпизода показывать "карточку" с названием, датой выхода и персонажами
+3. После нажатия на карточку эпизода - страница как минимум с: показать карточки персонажей и смерти в этом эпизоде
+4. Также должна быть страница персонажа с полной информацией про него: в каких сериях был, смерти связанные с ним (responsible) и цитаты
+
+Постараться вывести и связать как можно больше информации с API.
+
+## Normal
+
+1. На главной странице сделать поле поиска, где можно ввести: название эпизода, имя персонажа, кусок цитаты, умерших. В результате должно показывать карточки (найденные) по категориям
+2. На странице персонажа сделать таймлайн: рождение, связанные с ним эпизоды и смерти, а также в конце текущий статус (да, у него нет даты) с иконкой
+3. Создать список занятий (occupation) и персонажей, занимающихся ними
+4. При помощи [http://www.omdbapi.com/](http://www.omdbapi.com/) вывести информацию о сериале (в т.ч. постер), учитывая что IMDb ID (i) = tt0903747 (* apikey=88e836ce)
+
+## Max
+
+1. Для каждой сущности (эпизод, персонаж, смерть или цитата) сделать "поделиться", в качестве урла должен быть сокращенный отсюда - [https://rel.ink/](https://rel.ink/)
+2. Сделать возможность "избранных" персонажей (вверху справа иконка и т.д.), сохранять в локалсторедже
+3. Для каждого эпизода описывать погоду в Альбукерке (Albuquerque) в момент его выхода, данные брать с [https://www.metaweather.com/api/](https://www.metaweather.com/api/) (ps. не делать жесткой привязки, id города получать динамически при помощи поиска)
+4. "Список победителей" (топ 5) по количеству смертей: название персонажа, количество смертей и список умерших (если number_of_deaths > 1, то в скобках показать число)
+
+---
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`npm test`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`npm run build`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm run eject`
