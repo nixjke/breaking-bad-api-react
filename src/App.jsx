@@ -1,12 +1,18 @@
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
+import { setCount } from './reducers/apiReducer'
 
 function App() {
+  const dispatch = useDispatch()
+
+  function onCountClick() {
+    dispatch(setCount(8))
+  }
+
   return (
     <div className="App">
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem nisi illo quisquam labore, similique fuga
-        commodi, temporibus tempora animi nulla iste. Porro deleniti nostrum voluptas ipsam laudantium enim vel!
-      </h1>
+      <button onClick={() => onCountClick()}>count</button>
     </div>
   )
 }
