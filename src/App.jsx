@@ -1,20 +1,18 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import './App.css'
-import { setCount } from './reducers/apiReducer'
+import { getBreakingBadAllEpisodes } from './actions/fetchApi'
 
 function App() {
   const dispatch = useDispatch()
+  const allEpisode = useSelector(state => state.api.items)
+  getBreakingBadAllEpisodes()
+  React.useEffect(() => {
+    dispatch(getBreakingBadAllEpisodes())
+  }, [])
 
-  function onCountClick() {
-    dispatch(setCount(8))
-  }
-
-  return (
-    <div className="App">
-      <button onClick={() => onCountClick()}>count</button>
-    </div>
-  )
+  return <div className="App"></div>
 }
 
 export default App
