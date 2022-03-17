@@ -5,7 +5,7 @@ const defaultState = {
   isFetching: false
 }
 
-export default function apiReducer(state = defaultState, action) {
+function apiReducer(state = defaultState, action) {
   switch (action.type) {
     case SET_ALL_EPISODES:
       return {
@@ -17,9 +17,11 @@ export default function apiReducer(state = defaultState, action) {
   }
 }
 
-export function setAllEpisodes(allEpisodes) {
+function setAllEpisodes(allEpisodes) {
   return {
     type: SET_ALL_EPISODES,
     payload: allEpisodes
   }
 }
+
+export { apiReducer, setAllEpisodes }
