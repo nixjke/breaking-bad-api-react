@@ -1,4 +1,5 @@
 import { Box, AppBar, Toolbar, Typography } from '@mui/material'
+import {useSelector} from 'react-redux'
 
 function Header() {
   return (

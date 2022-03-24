@@ -1,6 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import './App.css'
 import { getBreakingBadAllEpisodes } from './actions/fetchApi'
 import Header from './components/Header'
@@ -9,9 +8,10 @@ import Cards from './components/Card'
 
 function App() {
   const dispatch = useDispatch()
-  const allEpisode = useSelector(state => state.api.items)
+  const allEpisode = useSelector(state => state.apiReducer.items)
 
   React.useEffect(() => {
+    // eslint-disable-next-line
     dispatch(getBreakingBadAllEpisodes())
   }, [])
 

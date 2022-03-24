@@ -2,13 +2,6 @@ import React from 'react'
 import { Card, CardContent, Container, Typography, List, ListItem } from '@mui/material'
 
 function Cards(props) {
-  let seasonNumber = 3
-  function test() {
-    let allSeason = props.allEpisode.map(episode => episode)
-    let filteredSeason = allSeason.filter(season => Number(season.season) === seasonNumber)
-    console.log(filteredSeason)
-  }
-  test()
   return (
     <Container sx={{ display: 'flex', flexWrap: 'wrap' }}>
       {props.allEpisode.map(episode => (
