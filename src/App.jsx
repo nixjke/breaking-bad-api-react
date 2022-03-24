@@ -8,7 +8,13 @@ import Cards from './components/Card'
 
 function App() {
   const dispatch = useDispatch()
-  const allEpisode = useSelector(state => state.apiReducer.items)
+  const allEpisode = useSelector(state => state.breakingBad.items)
+  const seasonNumber = useSelector(state => state.season)
+
+  function setSeason() {
+    let allSeries = allEpisode.map(episode => episode)
+    return allSeries.filter(series => Number(series.season) === seasonNumber)
+  }
 
   React.useEffect(() => {
     // eslint-disable-next-line
@@ -29,7 +35,7 @@ function App() {
     <div className="App">
       <Header />
       <Season seasons={getSeasons(allEpisode)} />
-      <Cards allEpisode={allEpisode} />
+      <Cards allEpisode={setSeason(allEpisode)} />
     </div>
   )
 }

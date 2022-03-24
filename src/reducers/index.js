@@ -6,8 +6,8 @@ import { selectSeasonReducer } from './selectSeasonReducer'
 import thunk from 'redux-thunk'
 
 const rootReducer = combineReducers({
-  apiReducer,
-  selectSeasonReducer
+  breakingBad: apiReducer,
+  season: selectSeasonReducer
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))

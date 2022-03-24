@@ -6,8 +6,6 @@ import { Tabs, Tab } from '@mui/material'
 function Season(props) {
   const dispatch = useDispatch()
   const [value, setValue] = React.useState(0)
-  const season = useSelector(state => state.selectSeasonReducer)
-  console.log(season)
 
   function handleChange(e, newValue) {
     setValue(newValue)
