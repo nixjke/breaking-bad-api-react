@@ -2,7 +2,7 @@ const SET_ALL_EPISODES = 'SET_ALL_EPISODES'
 
 const defaultState = {
   items: [],
-  isFetching: false
+  isFetching: false,
 }
 
 function apiReducer(state = defaultState, action) {
@@ -10,7 +10,7 @@ function apiReducer(state = defaultState, action) {
     case SET_ALL_EPISODES:
       return {
         ...state,
-        items: action.payload
+        items: action.payload,
       }
     default:
       return state
@@ -20,7 +20,7 @@ function apiReducer(state = defaultState, action) {
 function setAllEpisodes(allEpisodes) {
   return {
     type: SET_ALL_EPISODES,
-    payload: allEpisodes
+    payload: allEpisodes,
   }
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import './App.css'
+import { useDispatch, useSelector } from 'react-redux'
 import { getBreakingBadAllEpisodes } from './actions/fetchApi'
+import './App.css'
+import Cards from './components/Card'
 import Header from './components/Header'
 import Season from './components/Season'
-import Cards from './components/Card'
 
 function App() {
   const dispatch = useDispatch()
@@ -17,7 +17,6 @@ function App() {
   }
 
   React.useEffect(() => {
-    // eslint-disable-next-line
     dispatch(getBreakingBadAllEpisodes())
   }, [])
 

@@ -1,10 +1,9 @@
-import React from 'react'
-import { Card, CardContent, Container, Typography, List, ListItem } from '@mui/material'
+import { Card, CardContent, Container, List, ListItem, Typography } from '@mui/material'
 
-function Cards(props) {
+function Cards({ allEpisode }) {
   return (
     <Container sx={{ display: 'flex', flexWrap: 'wrap' }}>
-      {props.allEpisode.map(episode => (
+      {allEpisode.map(episode => (
         <Card key={episode.episode_id} sx={{ maxWidth: 275, margin: 2, bgcolor: '#34495E', color: 'white' }}>
           <CardContent>
             <Typography variant="h4" gutterBottom>
@@ -12,7 +11,7 @@ function Cards(props) {
             </Typography>
             <hr />
             <Typography variant="h6" gutterBottom>
-              Air date: {episode.air_date}{' '}
+              Air date: {episode.air_date}
             </Typography>
             <hr />
             <Typography variant="button" gutterBottom>

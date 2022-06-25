@@ -13,7 +13,7 @@ function selectSeasonReducer(state = defaultState, action) {
 function setSeason(season) {
   return {
     type: SELECT_SEASON,
-    payload: season
+    payload: season,
   }
 }
 

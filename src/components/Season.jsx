@@ -1,10 +1,11 @@
+import { Tab, Tabs } from '@mui/material'
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setSeason } from '../reducers/selectSeasonReducer'
-import { Tabs, Tab } from '@mui/material'
 
-function Season(props) {
+function Season({ seasons }) {
   const dispatch = useDispatch()
+
   const [value, setValue] = React.useState(0)
 
   function handleChange(e, newValue) {
@@ -14,7 +15,7 @@ function Season(props) {
 
   return (
     <Tabs value={value} onChange={handleChange} centered textColor="inherit" indicatorColor="primary">
-      {props.seasons.map(season => (
+      {seasons.map(season => (
         <Tab key={season} label={season} />
       ))}
     </Tabs>
